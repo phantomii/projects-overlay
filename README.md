@@ -5,6 +5,10 @@ Include following packages:
     * Helix (Trading platform)
     * RESTAlchemy (The Python REST HTTP Toolkit and Object Relational Mapper)
 
+##TODO
+
+ - [ ] Add six to >RESTAlchemy-1.0.1
+
 ##Install
 
 As per the [current Portage specifications](https://dev.gentoo.org/~zmedico/portage/doc/man/portage.5.html), overlays should be managed via `/etc/portage/repos.conf/`.
