@@ -76,7 +76,7 @@ python_install() {
 
     if use server ; then
         diropts -m 0755 -o root -g root
-        insinto /var/www/helix
+        insinto /var/lib/helix
         insopts -m 0444 -o root -g root
         doins "helix.wsgi"
 
@@ -87,8 +87,5 @@ python_install() {
 
         # systemd sturtup
         systemd_newunit etc/systemd/helix.uwsgi.service helix.uwsgi.service
-
-        diropts -m 0755 -o helix -g root
-        keepdir /var/run/helix
     fi
 }
