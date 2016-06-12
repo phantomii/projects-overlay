@@ -6,7 +6,7 @@ EAPI=5
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="threads(+)"
 
-inherit distutils-r1 user
+inherit distutils-r1 user systemd
 
 DESCRIPTION="Trading platform"
 HOMEPAGE="https://helix.synapse.net.ru/"
@@ -86,10 +86,7 @@ python_install() {
         doins "etc/uwsgi/helix.ini"
 
         # systemd sturtup
-        diropts -m 0755 -o root -g root
-        insinto /usr/lib64/systemd/system
-        insopts -m 0644 -o root -g root
-        doins "etc/systemd/helix.uwsgi.service"
+        systemd_newunit etc/systemd/helix.uwsgi.service helix.uwsgi.service
 
         diropts -m 0755 -o helix -g root
         keepdir /var/run/helix
