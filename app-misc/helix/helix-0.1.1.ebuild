@@ -71,6 +71,9 @@ python_install() {
     diropts -m 0755 -o helix -g root
     keepdir /var/lib/helix
 
+    diropts -m 0755 -o helix -g root
+    keepdir /var/log/helix
+
     if use server ; then
         diropts -m 0755 -o root -g root
         insinto /var/www/helix
@@ -84,7 +87,7 @@ python_install() {
 
         # systemd sturtup
         diropts -m 0755 -o root -g root
-        insinto /etc/systemd/system
+        insinto /usr/lib64/systemd/system
         insopts -m 0644 -o root -g root
         doins "etc/systemd/helix.uwsgi.service"
 
