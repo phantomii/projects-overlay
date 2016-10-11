@@ -33,9 +33,9 @@ S=$WORKDIR
 src_install() {
 	insinto "/opt"
 	doins -r *
-	dosym "/opt/GitKraken/gitkraken" "/usr/bin/gitkraken"
+	dosym "/opt/gitkraken/gitkraken" "/usr/bin/gitkraken"
 	insinto "/usr/share/applications"
-	fperms +x "/opt/GitKraken/gitkraken"
+	fperms +x "/opt/gitkraken/gitkraken"
 	doins ${FILESDIR}/gitkraken.desktop
 	insinto "/usr/share/pixmaps"
 	doins ${FILESDIR}/gitkraken.png
